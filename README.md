@@ -1,6 +1,8 @@
 # queens_tech_lab_task3
 
-A new Flutter application.
+3.4,画面の受け渡しとリストデータの取り扱い
+　画面A、Bを作成し、画面Aのテキストを画面Bに表示する。
+　modelファイルを作成、リストデータを作成し、リストデータを画面に表示する。
 
 ## Getting Started
 
