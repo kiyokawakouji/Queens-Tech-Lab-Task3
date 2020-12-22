@@ -30,26 +30,36 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+  String sentence;
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text("Tap here"),
-          onPressed: () {
-            Navigator.push(
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+          Center(
+           child: FlatButton(
+             child: Text("次へ"),
+           onPressed: () async {
+            final result = await Navigator.push(
               context,
-              MaterialPageRoute(       // 遷移先のページ
-                  builder: (context) => NextPage(),
+              MaterialPageRoute(       // 遷移先のページ("message")
+                  builder: (context) => NextPage("メッセージ"),
               ),
             );
-          },
-        ),
+            sentence = result; // 画面に出力
+            print(result); // consoleに出力
+           },
+          ),
+         ),
+        ],
+       ),
       ),
     );
   }
